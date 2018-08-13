@@ -5,8 +5,8 @@
  * @copyright Copyright (c) 2018 Power Kernel
  */
 
-/* @var $ftp_local_file string */
-/* @var $ftp_remote_file string */
+/* @var $ftp_local_file string $argv[1] */
+/* @var $ftp_remote_file string $argv[2] */
 
 use Aws\Exception\MultipartUploadException;
 use Aws\S3\MultipartUploader;
@@ -15,7 +15,9 @@ require __DIR__ . '/vendor/autoload.php';
 $conf=require __DIR__ . '/config.php';
 
 $date = date('Ymd');
-$bucket = $argv[1] . '-' . $date . '-' . substr(strtolower(md5($date)), 26);
+$bucket = $conf['bucket'];
+$ftp_local_file=$argv[1];
+$ftp_remote_file=$argv[2];
 
 // S3 Client
 $client = new Aws\S3\S3Client([
@@ -60,7 +62,7 @@ if (!$exist) {
                             'DaysAfterInitiation' => 1,
                         ],
                         'Expiration' => [
-                            'Days' => 1,
+                            'Days' => $conf['expiration'],
                         ],
                         'Status' => 'Enabled',
                         'Prefix' => ''
@@ -73,9 +75,9 @@ if (!$exist) {
 
 
 // Upload
-$uploader = new MultipartUploader($client, $argv[2], [
+$uploader = new MultipartUploader($client, $ftp_local_file, [
     'bucket' => $bucket,
-    'key' => $argv[3],
+    'key' => date('Y-m-d').'/'.$ftp_remote_file,
 ]);
 
 try {

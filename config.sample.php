@@ -10,5 +10,7 @@ return [
         'key' => 'YOUR_AWS_KEY',
         'secret' => 'YOUR_AWS_SECRET',
     ],
-    'region' => 'ap-southeast-1',
+    'region' => 'us-east-1',
+    'bucket'=>'you-bucket-name',
+    'expiration'=>3
 ];
