@@ -1,0 +1,20 @@
+{
+  "name": "powerkernel/directadmin-s3-backup",
+  "description": "DirectAdmin S3 Backup",
+  "keywords": [
+    "s3",
+    "aws",
+    "direct admin",
+    "backup"
+  ],
+  "homepage": "https://powerkernel.com/",
+  "type": "project",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/powerkernel/directadmin-s3-backup/issues?state=open",
+    "source": "https://github.com/powerkernel/directadmin-s3-backup"
+  },
+  "require": {
+    "aws/aws-sdk-php": "*"
+  }
+}
