@@ -1,6 +1,12 @@
 # directadmin-s3-backup
 DirectAdmin S3 Backup
 
+Features
+--------
+- Auto backup upload to AWS S3
+- Auto Create S3 Bucket
+- Auto delete old backups after X day(s)
+
 Installation
 ------------
 
@@ -12,7 +18,6 @@ Create `ftp_upload.php` file in `/usr/local/directadmin/scripts/custom` with the
 ```
 #!/bin/sh
 RET=0;
-HOSTNAME=hostname -f;
 /usr/local/bin/php /home/admin/tools/directadmin-s3-backup/ftp_upload_aws.php $ftp_local_file $ftp_remote_file 2>&1
 RET=$?
 exit $RET
