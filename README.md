@@ -17,7 +17,8 @@ We assume that the .zip is extracted at `/home/admin/tools/directadmin-s3-backup
 Create `ftp_upload.php` file in `/usr/local/directadmin/scripts/custom` with the following content:
 ```
 #!/bin/sh
-if [ ${ftp_ip} == "HOSTNAME" ] && [ ${ftp_username} == "admin" ]; then
+HOSTNAME=hostname -f;
+if [ ${ftp_ip} == $HOSTNAME ] && [ ${ftp_username} == "admin" ]; then
 	RET=0;
 	php /home/admin/tools/directadmin-s3-backup/ftp_upload_aws.php $ftp_local_file $ftp_remote_file 2>&1
 	RET=$?	
