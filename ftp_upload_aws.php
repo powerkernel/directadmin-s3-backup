@@ -20,12 +20,17 @@ $ftp_local_file=$argv[1];
 $ftp_remote_file=$argv[2];
 
 // S3 Client
-$client = new Aws\S3\S3Client([
+$opts=[
     //'profile' => 'default',
     'version' => 'latest',
     'region' => $conf['region'],
     'credentials' => $conf['credentials'],
-]);
+];
+if(!empty($conf['endpoint'])){
+	$opts['endpoint']=$conf['endpoint'];
+}
+
+$client = new Aws\S3\S3Client($opts);
 
 // check bucket exist
 $exist = false;

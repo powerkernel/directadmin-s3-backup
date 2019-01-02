@@ -12,5 +12,6 @@ return [
     ],
     'region' => 'us-east-1',
     'bucket'=>'you-bucket-name',
-    'expiration'=>3
+    'expiration'=>3,
+	//'endpoint' => 'https://sfo2.digitaloceanspaces.com', //enable this for digitalocean space	
 ];
