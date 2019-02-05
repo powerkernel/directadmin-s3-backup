@@ -20,7 +20,7 @@ Create `ftp_upload.php` file in `/usr/local/directadmin/scripts/custom` with the
 HOSTNAME=hostname -f;
 if [ ${ftp_ip} == $HOSTNAME ] && [ ${ftp_username} == "admin" ]; then
 	RET=0;
-	php /home/admin/tools/directadmin-s3-backup/ftp_upload_aws.php $ftp_local_file $ftp_remote_file 2>&1
+	php /home/admin/tools/directadmin-s3-backup/ftp_upload_s3.php $ftp_local_file $ftp_remote_file 2>&1
 	RET=$?	
 else
 	FTPPUT=/usr/bin/ncftpput
