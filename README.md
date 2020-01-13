@@ -14,7 +14,7 @@ Download the [.zip](https://github.com/powerkernel/directadmin-s3-backup/archive
 
 We assume that the .zip is extracted at `/home/admin/tools/directadmin-s3-backup`, run `composer update` to download the AWS PHP-SDK.
 
-Create `ftp_upload.php` file in `/usr/local/directadmin/scripts/custom` with the following content:
+Create and chmod +x `ftp_upload.php` file in `/usr/local/directadmin/scripts/custom` with the following content:
 ```
 #!/bin/sh
 HOSTNAME=hostname -f;
