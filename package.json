@@ -4,15 +4,19 @@
   "description": "DirectAdmin S3 Backup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "npx standard-version && git push --follow-tags origin main"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/powerkernel/directadmin-s3-backup.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Harry Tang",
+    "email": "harry@powerkernel.com",
+    "url": "https://powerkernel.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/powerkernel/directadmin-s3-backup/issues"
   },
