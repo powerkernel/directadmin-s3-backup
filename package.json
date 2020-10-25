@@ -1,0 +1,20 @@
+{
+  "name": "directadmin-s3-backup",
+  "version": "1.0.0",
+  "description": "DirectAdmin S3 Backup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powerkernel/directadmin-s3-backup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/powerkernel/directadmin-s3-backup/issues"
+  },
+  "homepage": "https://github.com/powerkernel/directadmin-s3-backup#readme"
+}
